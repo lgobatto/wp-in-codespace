@@ -1,0 +1,42 @@
+# Environment files
+.env
+
+# Docker volumes
+/var/lib/mysql/
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/settings.json
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*~
+
+# Composer
+vendor/
+composer.phar
+
+# Node.js (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# WordPress specific (if used)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php

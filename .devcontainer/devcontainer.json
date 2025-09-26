@@ -1,0 +1,34 @@
+{
+  "name": "WordPress Stack",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "php",
+  "workspaceFolder": "/var/www/html",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [80, 3306],
+  "portsAttributes": {
+    "80": {
+      "label": "Web Server",
+      "onAutoForward": "openBrowser"
+    },
+    "3306": {
+      "label": "MariaDB"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "ms-ceintl.vscode-language-pack-pt-br",
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "ms-vscode.vscode-docker"
+      ],
+      "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "php.debug.executablePath": "/usr/local/bin/php"
+      }
+    }
+  },
+  "postCreateCommand": "composer install --no-dev --optimize-autoloader || echo 'No composer.json found'",
+  "remoteUser": "www-data"
+}
